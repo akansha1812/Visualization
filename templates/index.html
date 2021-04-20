@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title> FIFA 2019 Players </title>
+<style>
+
+    .bar { fill: steelblue; }
+
+.line {
+    fill: none;
+    stroke: #ffab00;
+    stroke-width: 3;
+}
+
+/* Style the dots by assigning a fill and stroke */
+.dot {
+    fill: #ffab00;
+    stroke: #fff;
+}
+</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='style.css') }}">
+    <script type='text/javascript' >
+  var n_index = false;
+</script>
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://bl.ocks.org/syntagmatic/raw/3341641/render-queue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <script src = "{{ url_for('static', filename='LoadingTable.js')}}"></script>
+	<script src = "{{ url_for('static', filename='CreateBarScree.js')}}"></script>
+    <script src = "{{ url_for('static', filename='ScatterPlot.js')}}"></script>
+    <script src = "{{ url_for('static', filename='scatterMatrix.js')}}"></script>
+    <script src = "{{ url_for('static', filename='mds_eu.js')}}"></script>
+    <script src = "{{ url_for('static', filename='mds_cor.js')}}"></script>
+    <script src = "{{ url_for('static', filename='parallel.js')}}"></script>
+
+
+</head>
+
+<body>
+  <h1>Dashboard: Spanish Professional Football Club</h1>
+
+  <svg width="800" height="500" id="svg1"> </svg>
+    <svg width="800" height="500" id="svg2"> </svg>
+  <h2>Scatter Matrix</h2>
+  <svg width="1020" height="1000" id="svg3"> </svg>
+
+
+   <h2>Loadings Table of top 4 Attributes </h2>
+  <div id = "table"></div>
+  <svg width="1000" height="500" id="svg4"> </svg>
+  <svg width="1000" height="500" id="svg5"> </svg>
+   <h2>Parallel Coordinates Plot of Players' Features</h2>
+  <svg width="1550" height="600" id="svg6"> </svg>
+
+    <script>
+
+	createBarchart()
+	createScatterPlot()
+	mds_eu()
+	mds_cor()
+	pcp()
+
+  </script>
+
+</body>
+</html>
